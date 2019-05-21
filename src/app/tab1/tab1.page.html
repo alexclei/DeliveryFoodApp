@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Lugares
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- 
+  <ion-card *ngFor="let res of r">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="pizza"></ion-icon> Lanches da Tia
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>$$ &bull; Salgados &bull; <ion-icon name="star"></ion-icon> 4,8 &bull; Rua Açai</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list *ngFor="let res of r">
+    <ion-item>
+      <ion-thumbnail item-start>
+        <img src="">
+      </ion-thumbnail>
+      <h2></h2>
+      <p>{{res.id}} {{res.nome}}</p>
+    </ion-item>
+  </ion-list> -->
+  
+  <ion-card *ngFor="let dado of dados">
+    <ion-card-header>
+      <ion-card-title>
+        <ion-icon name="pizza"></ion-icon> Lanches da Tia
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>{{ dado }} &bull; &bull; $$ &bull; Salgados &bull; <ion-icon name="star"></ion-icon> 4,8 &bull; Rua Açai</p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
