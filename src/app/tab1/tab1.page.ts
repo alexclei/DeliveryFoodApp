@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HTTP } from '@ionic-native/http/ngx';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-tab1',
@@ -8,13 +8,18 @@ import { HTTP } from '@ionic-native/http/ngx';
 })
 
 export class Tab1Page {
-  public dados:any[] = null;
-  constructor (private http:HTTP) {
-    this.http.get('https://appdevap.000webhostapp.com/', {}, {})
-    .then(res => {
-      this.dados = res.data
-      console.log(res.data)
-    })
-    .catch(error => console.log(error.error));
+  public lista:Array<any>;
+  constructor (private http:Http) {
+    this.http.get('http://localhost/delivery/apirest/public/api/lugar').subscribe(
+      data => {
+        let dados = (data as any)
+        dados = JSON.parse(dados._body)
+        this.lista = dados
+        console.log(this.lista)
+      },
+      error => {
+        console.log(error)
+      }
+    )
   }
 }
